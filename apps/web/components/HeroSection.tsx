@@ -32,14 +32,14 @@ export default function HeroSection() {
         >
           <Link
             href="/portfolio"
-            className="inline-flex items-center px-8 py-3 bg-blueprint-blue text-white rounded-lg hover:bg-blueprint-blue/80 transition-colors"
+            className="inline-flex items-center px-8 py-3 bg-blueprint-blue text-white rounded-lg neon-border pulse-glow hover-lift transition-all duration-300"
           >
             View Portfolio
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-3 border border-blueprint-blue text-blueprint-light rounded-lg hover:bg-blueprint-blue/10 transition-colors"
+            className="inline-flex items-center px-8 py-3 border border-blueprint-blue text-blueprint-light rounded-lg glass-light hover-lift neon-border transition-all duration-300"
           >
             Start a Project
           </Link>

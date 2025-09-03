@@ -47,7 +47,7 @@ export default function ServicesOverview() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+          <h2 className="text-4xl font-bold mb-4 neon-text">Our Services</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Comprehensive digital fabrication solutions tailored to your needs
           </p>
@@ -63,7 +63,7 @@ export default function ServicesOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-6 hover:border-blueprint-blue transition-colors"
+                className="glass-card rounded-lg p-6 hover-lift gradient-overlay scale-in neon-border transition-all duration-300"
               >
                 <Icon className="h-12 w-12 text-blueprint-blue mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>

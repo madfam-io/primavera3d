@@ -167,7 +167,7 @@ export default function ContactForm() {
           transition-all duration-300
           ${isSubmitting 
             ? 'bg-gray-700 cursor-not-allowed opacity-50' 
-            : 'bg-blueprint-blue hover:bg-blueprint-blue/80 text-white'
+            : 'bg-blueprint-blue hover:bg-blueprint-blue/80 text-white neon-border pulse-glow hover-lift'
           }
         `}
       >

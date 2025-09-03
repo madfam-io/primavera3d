@@ -43,7 +43,7 @@ export default function FeaturedProjects() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold mb-4 neon-text">Featured Projects</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Explore our latest work in 3D design and digital fabrication
           </p>
@@ -57,7 +57,7 @@ export default function FeaturedProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+              className="group relative glass-card rounded-lg overflow-hidden hover-lift gradient-overlay neon-border transition-all duration-300"
             >
               <div className="aspect-[4/3] relative overflow-hidden bg-gray-800">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80 z-10" />
@@ -104,7 +104,7 @@ export default function FeaturedProjects() {
         >
           <Link
             href="/portfolio"
-            className="inline-flex items-center text-blueprint-blue hover:text-blueprint-light transition-colors"
+            className="inline-flex items-center px-6 py-3 text-blueprint-blue hover:text-blueprint-light glass-light rounded-lg hover-lift neon-border transition-all duration-300"
           >
             View All Projects
             <ArrowRight className="ml-2 h-5 w-5" />

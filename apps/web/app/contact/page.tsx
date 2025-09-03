@@ -72,7 +72,7 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Response Promise */}
-              <div className="p-6 bg-blueprint-blue/10 border border-blueprint-blue/30 rounded-lg">
+              <div className="glass-light p-6 rounded-lg neon-border pulse-glow">
                 <h3 className="font-semibold mb-2">Quick Response</h3>
                 <p className="text-sm text-gray-300">
                   We typically respond to all inquiries within 24 hours during business days.
@@ -82,8 +82,8 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-                <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
+              <div className="glass-card p-8 rounded-xl hover-lift gradient-overlay">
+                <h2 className="text-2xl font-semibold mb-6 neon-text">Send Us a Message</h2>
                 <ContactForm />
               </div>
             </div>
@@ -93,25 +93,25 @@ export default function ContactPage() {
           <div className="mt-20 border-t border-gray-800 pt-12">
             <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="p-6 bg-gray-900/50 rounded-lg">
+              <div className="glass-card p-6 rounded-lg hover-lift gradient-overlay scale-in">
                 <h3 className="font-semibold mb-2">What services do you offer?</h3>
                 <p className="text-gray-400 text-sm">
                   We specialize in 3D modeling, parametric design, digital fabrication, CNC machining, and rapid prototyping for various industries.
                 </p>
               </div>
-              <div className="p-6 bg-gray-900/50 rounded-lg">
+              <div className="glass-card p-6 rounded-lg hover-lift gradient-overlay scale-in">
                 <h3 className="font-semibold mb-2">How long does a typical project take?</h3>
                 <p className="text-gray-400 text-sm">
                   Project timelines vary based on complexity. Simple projects may take 1-2 weeks, while complex ones can take 4-8 weeks or more.
                 </p>
               </div>
-              <div className="p-6 bg-gray-900/50 rounded-lg">
+              <div className="glass-card p-6 rounded-lg hover-lift gradient-overlay scale-in">
                 <h3 className="font-semibold mb-2">Do you work with international clients?</h3>
                 <p className="text-gray-400 text-sm">
                   Yes, we work with clients worldwide. We can collaborate remotely and ship finished products internationally.
                 </p>
               </div>
-              <div className="p-6 bg-gray-900/50 rounded-lg">
+              <div className="glass-card p-6 rounded-lg hover-lift gradient-overlay scale-in">
                 <h3 className="font-semibold mb-2">What file formats do you accept?</h3>
                 <p className="text-gray-400 text-sm">
                   We work with all major CAD formats including STEP, STL, OBJ, IGES, as well as design files from software like Rhino, Fusion 360, and SolidWorks.
