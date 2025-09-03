@@ -8,6 +8,11 @@ export function LoadingSpinner() {
       justifyContent: 'center',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     }}>
+      <style>{`
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
       <div style={{
         width: '50px',
         height: '50px',
@@ -16,11 +21,6 @@ export function LoadingSpinner() {
         borderTopColor: '#fff',
         animation: 'spin 1s ease-in-out infinite'
       }} />
-      <style jsx>{`
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
     </div>
   );
 }

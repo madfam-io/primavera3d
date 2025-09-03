@@ -3,8 +3,8 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Grid } from '@react-three/drei';
-import { ModelViewerProps } from './types';
-import { LoadingSpinner } from './LoadingSpinner';
+import { ModelViewerProps } from './types.js';
+import { LoadingSpinner } from './LoadingSpinner.js';
 
 export function ModelViewer({ 
   children, 

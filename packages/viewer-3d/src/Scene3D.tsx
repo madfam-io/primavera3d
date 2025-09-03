@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
-import { Scene3DProps } from './types';
+import { Scene3DProps } from './types.js';
 
 export function Scene3D({ 
   rotation = true,
