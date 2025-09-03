@@ -13,12 +13,15 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-            <span className="bg-gradient-to-r from-blueprint-blue to-blueprint-light bg-clip-text text-transparent">
-              Primavera3D
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="text-white drop-shadow-2xl">
+              Primavera
+            </span>
+            <span className="bg-gradient-to-r from-blueprint-blue to-blueprint-light bg-clip-text text-transparent drop-shadow-lg">
+              3D
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-lg font-medium">
             Transforming ideas into reality through advanced 3D modeling, 
             parametric design, and digital fabrication
           </p>
@@ -32,14 +35,14 @@ export default function HeroSection() {
         >
           <Link
             href="/portfolio"
-            className="inline-flex items-center px-8 py-3 bg-blueprint-blue text-white rounded-lg neon-border pulse-glow hover-lift transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 bg-blueprint-blue text-white rounded-lg font-semibold shadow-2xl hover:bg-blueprint-blue/90 hover:shadow-blueprint-blue/25 transition-all duration-300"
           >
             View Portfolio
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-3 border border-blueprint-blue text-blueprint-light rounded-lg glass-light hover-lift neon-border transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
           >
             Start a Project
           </Link>
@@ -51,17 +54,17 @@ export default function HeroSection() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
-          <div className="flex items-center justify-center gap-3 text-gray-400">
+          <div className="flex items-center justify-center gap-3 text-gray-200">
             <Cpu className="h-6 w-6 text-blueprint-blue" />
-            <span>CAD/CAM Expertise</span>
+            <span className="font-medium">CAD/CAM Expertise</span>
           </div>
-          <div className="flex items-center justify-center gap-3 text-gray-400">
+          <div className="flex items-center justify-center gap-3 text-gray-200">
             <Layers className="h-6 w-6 text-blueprint-blue" />
-            <span>Parametric Design</span>
+            <span className="font-medium">Parametric Design</span>
           </div>
-          <div className="flex items-center justify-center gap-3 text-gray-400">
+          <div className="flex items-center justify-center gap-3 text-gray-200">
             <Zap className="h-6 w-6 text-blueprint-blue" />
-            <span>Rapid Prototyping</span>
+            <span className="font-medium">Rapid Prototyping</span>
           </div>
         </motion.div>
       </div>
