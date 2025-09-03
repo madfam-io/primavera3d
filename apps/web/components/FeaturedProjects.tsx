@@ -34,7 +34,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="py-20 bg-blueprint-dark">
+    <section className="py-20 bg-blueprint-dark blueprint-grid">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,9 +59,8 @@ export default function FeaturedProjects() {
               viewport={{ once: true }}
               className="group relative glass-card rounded-lg overflow-hidden hover-lift gradient-overlay neon-border transition-all duration-300"
             >
-              <div className="aspect-[4/3] relative overflow-hidden bg-gray-800">
+              <div className="aspect-[4/3] relative overflow-hidden bg-gray-800 blueprint-sheet">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80 z-10" />
-                <div className="absolute inset-0 blueprint-grid opacity-10" />
               </div>
               
               <div className="p-6">

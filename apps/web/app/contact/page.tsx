@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-blueprint-dark text-white">
-      <div className="container mx-auto px-4 py-20">
+    <main className="bp-page">
+      <div className="bp-container bp-section">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4">Get in Touch</h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <h1 className="bp-text-h1">Get in Touch</h1>
+            <p className="bp-text-body max-w-2xl mx-auto">
               Ready to bring your ideas to life? Contact us to discuss your project and discover how we can help transform your vision into reality.
             </p>
           </div>
@@ -24,7 +24,7 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-8">
               <div>
-                <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
+                <h2 className="bp-text-h2">Contact Information</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">

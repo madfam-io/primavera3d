@@ -38,7 +38,7 @@ const services = [
 
 export default function ServicesOverview() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-gray-900 blueprint-sheet">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export default function ServicesOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass-card rounded-lg p-6 hover-lift gradient-overlay scale-in neon-border transition-all duration-300"
+                className="glass-card rounded-lg p-6 hover-lift gradient-overlay scale-in neon-border blueprint-sheet transition-all duration-300"
               >
                 <Icon className="h-12 w-12 text-blueprint-blue mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>

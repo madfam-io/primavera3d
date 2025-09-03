@@ -24,6 +24,37 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221 83% 53%;
     --radius: 0.5rem;
+    
+    /* Blueprint Design System Tokens */
+    --bp-bg: #0A1422;
+    --bp-surface: #0E1A2B;
+    --bp-card: #112842;
+    --bp-border: rgba(207, 232, 255, 0.15);
+    --bp-grid: rgba(207, 232, 255, 0.08);
+    
+    /* Typography Scale */
+    --bp-text-primary: #ffffff;
+    --bp-text-secondary: #CFE8FF;
+    --bp-text-tertiary: #9CA3AF;
+    --bp-text-muted: #6B7280;
+    --bp-text-accent: #2563EB;
+    
+    /* Spacing Scale */
+    --bp-space-xs: 0.25rem;   /* 4px */
+    --bp-space-sm: 0.5rem;    /* 8px */
+    --bp-space-md: 1rem;      /* 16px */
+    --bp-space-lg: 1.5rem;    /* 24px */
+    --bp-space-xl: 2rem;      /* 32px */
+    --bp-space-2xl: 3rem;     /* 48px */
+    --bp-space-3xl: 4rem;     /* 64px */
+    --bp-space-4xl: 5rem;     /* 80px */
+    
+    /* Animation Tokens */
+    --bp-duration-fast: 200ms;
+    --bp-duration-normal: 300ms;
+    --bp-duration-slow: 500ms;
+    --bp-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --bp-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .dark {
@@ -58,11 +89,44 @@
   }
 }
 
-/* Blueprint aesthetic grid pattern */
+/* Blueprint aesthetic - sophisticated multi-layer graph paper */
 .blueprint-grid {
-  background-image: 
-    linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px);
+  background-image:
+    /* Main grid lines (16px) */
+    linear-gradient(rgba(207, 232, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 232, 255, 0.08) 1px, transparent 1px),
+    /* Sub-grid lines (64px major) */
+    linear-gradient(rgba(207, 232, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 232, 255, 0.04) 1px, transparent 1px);
+  background-size: 
+    16px 16px, 16px 16px,
+    64px 64px, 64px 64px;
+}
+
+/* Enhanced blueprint background for hero sections */
+.blueprint-stage {
+  background-color: #0A1422;
+  background-image:
+    /* Fine grid (8px) */
+    linear-gradient(rgba(207, 232, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 232, 255, 0.06) 1px, transparent 1px),
+    /* Medium grid (32px) */
+    linear-gradient(rgba(207, 232, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 232, 255, 0.04) 1px, transparent 1px),
+    /* Major grid (128px) */
+    linear-gradient(rgba(207, 232, 255, 0.08) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(207, 232, 255, 0.08) 2px, transparent 2px);
+  background-size:
+    8px 8px, 8px 8px,
+    32px 32px, 32px 32px,
+    128px 128px, 128px 128px;
+}
+
+/* Subtle blueprint for card backgrounds */
+.blueprint-sheet {
+  background-image:
+    linear-gradient(rgba(207, 232, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 232, 255, 0.03) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -217,5 +281,111 @@
       0 0 10px rgba(37, 99, 235, 0.5),
       0 0 20px rgba(37, 99, 235, 0.3),
       0 0 30px rgba(37, 99, 235, 0.1);
+  }
+}
+
+/* Blueprint Component System */
+.bp-page {
+  min-height: 100vh;
+  background-color: var(--bp-bg);
+  color: var(--bp-text-primary);
+}
+
+.bp-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--bp-space-xl);
+  padding-right: var(--bp-space-xl);
+}
+
+.bp-section {
+  padding-top: var(--bp-space-4xl);
+  padding-bottom: var(--bp-space-4xl);
+}
+
+.bp-card-base {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bp-border);
+  border-radius: 16px;
+  padding: var(--bp-space-xl);
+  transition: all var(--bp-duration-normal) var(--bp-ease-standard);
+}
+
+.bp-card-interactive {
+  transform: translateY(0);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.bp-card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.25),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 20px rgba(37, 99, 235, 0.1);
+}
+
+.bp-text-h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--bp-space-lg);
+  color: var(--bp-text-primary);
+}
+
+.bp-text-h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--bp-space-md);
+  color: var(--bp-text-primary);
+}
+
+.bp-text-h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: var(--bp-space-md);
+  color: var(--bp-text-primary);
+}
+
+.bp-text-body {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--bp-text-secondary);
+}
+
+.bp-text-muted {
+  color: var(--bp-text-muted);
+}
+
+.bp-transition-fast {
+  transition: all var(--bp-duration-fast) var(--bp-ease-standard);
+}
+
+.bp-transition-normal {
+  transition: all var(--bp-duration-normal) var(--bp-ease-standard);
+}
+
+.bp-transition-slow {
+  transition: all var(--bp-duration-slow) var(--bp-ease-standard);
+}
+
+@media (min-width: 768px) {
+  .bp-text-h1 {
+    font-size: 4rem;
+  }
+  
+  .bp-text-h2 {
+    font-size: 3rem;
+  }
+  
+  .bp-text-h3 {
+    font-size: 2.25rem;
   }
 }

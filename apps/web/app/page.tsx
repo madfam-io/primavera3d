@@ -6,14 +6,10 @@ import CTASection from '@/components/CTASection';
 export default function Home() {
   return (
     <main className="min-h-screen bg-blueprint-dark text-white">
-      {/* Hero Section - Clean & Readable */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Simplified background - single subtle layer */}
-        <div className="absolute inset-0 blueprint-grid opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-blueprint-dark/95 via-blueprint-dark/90 to-blueprint-dark/95" />
-        
-        {/* High contrast content overlay */}
-        <div className="absolute inset-0 bg-black/20" />
+      {/* Hero Section - Blueprint Stage */}
+      <section className="relative h-screen overflow-hidden blueprint-stage">
+        {/* Technical depth overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/30" />
         
         <HeroSection />
       </section>
