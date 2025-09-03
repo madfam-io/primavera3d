@@ -1,0 +1,48 @@
+{
+  "name": "primavera3d",
+  "private": true,
+  "version": "0.1.0",
+  "description": "High-performance portfolio website for 3D modeling and digital fabrication services",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "check-types": "turbo run check-types",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "prepare": "husky install",
+    "setup": "./scripts/setup.sh",
+    "check:env": "node scripts/check-env.js",
+    "analyze": "ANALYZE=true npm run build"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "typescript": "5.9.2",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "vitest": "^1.2.0",
+    "@vitest/ui": "^1.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@testing-library/react": "^14.1.0",
+    "@testing-library/jest-dom": "^6.1.0",
+    "@testing-library/user-event": "^14.5.0",
+    "jsdom": "^23.2.0",
+    "@playwright/test": "^1.41.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.5.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

@@ -8,13 +8,14 @@
 ## TL;DR (Quick Start)
 
 ```bash
-# Prereqs: Node 20 LTS, pnpm 9+, Git
-corepack enable          # enables pnpm if not installed
-pnpm i                   # install all deps
-cp .env.example .env     # create and fill your env vars
-pnpm db:up               # start local Postgres (if using Docker) OR ensure DATABASE_URL is reachable
-pnpm db:migrate          # run Prisma migrations
-pnpm dev                 # start Next.js on http://localhost:3000
+# Prereqs: Node 20 LTS, npm 11+, Git
+nvm use                  # switch to correct Node version
+npm run setup           # automated setup (installs deps, checks env, builds)
+# OR manual setup:
+npm ci                   # install all deps
+cp .env.example .env.local  # create and fill your env vars
+npm run build           # build all packages
+npm run dev             # start Next.js on http://localhost:3000
 ```
 
 ---
@@ -73,7 +74,7 @@ This repository hosts the **Primavera3D** website: an immersive showcase of 3D w
 
 ## Environment Setup
 
-Create `.env` from `.env.example` and fill the values.
+Create `.env.local` from `.env.example` and fill the values.
 
 ```env
 # App
@@ -123,27 +124,38 @@ NEXT_PUBLIC_CAL_URL=https://cal.com/primavera3d/intro
 Common scripts (run from repo root):
 
 ```bash
-pnpm dev        # start app(s) in dev mode
-pnpm build      # typecheck + build all packages
-pnpm lint       # eslint
-pnpm typecheck  # tsc --noEmit
-pnpm test       # vitest
-pnpm e2e        # playwright tests
-pnpm storybook  # component explorer
+npm run dev        # start app(s) in dev mode
+npm run build      # typecheck + build all packages
+npm run lint       # eslint across all packages
+npm run check-types  # TypeScript type checking
+npm run format     # format with Prettier
+npm run test       # run Vitest unit tests
+npm run test:ui    # run Vitest with UI
+npm run test:coverage  # test coverage report
+npm run test:e2e   # Playwright E2E tests
+npm run test:e2e:ui  # Playwright with UI
+npm run clean      # clean all build artifacts
 
-# Database
-pnpm db:up         # starts local Postgres via Docker compose (if provided)
-pnpm db:migrate    # apply prisma migrations
-pnpm db:studio     # open Prisma Studio
+# Utilities
+npm run setup      # automated first-time setup
+npm run check:env  # verify environment variables
+
+# Database (when Prisma is configured)
+# npm run db:migrate    # apply prisma migrations
+# npm run db:studio     # open Prisma Studio
 ```
 
 ### Running the Web App
 
 ```bash
-cd apps/web
-pnpm dev
+npm run dev
 # open http://localhost:3000
 ```
+
+### VS Code Integration
+
+Recommended extensions will be suggested when you open the project.
+Settings are pre-configured for optimal development experience.
 
 ---
 

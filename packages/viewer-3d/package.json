@@ -1,0 +1,31 @@
+{
+  "name": "@repo/viewer-3d",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/drei": "^9.88.0",
+    "three": "^0.160.0",
+    "@react-three/postprocessing": "^2.15.0",
+    "leva": "^0.9.35"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@types/react": "^18.3.1",
+    "@types/three": "^0.160.0",
+    "eslint": "^9.34.0",
+    "typescript": "5.9.2"
+  }
+}
