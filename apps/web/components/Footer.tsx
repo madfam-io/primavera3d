@@ -53,8 +53,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-blueprint-blue" />
-                <a href="mailto:hello@primavera3d.com" className="hover:text-white transition-colors">
-                  hello@primavera3d.com
+                <a href="mailto:hello@primavera3d.pro" className="hover:text-white transition-colors">
+                  hello@primavera3d.pro
                 </a>
               </div>
             </div>
