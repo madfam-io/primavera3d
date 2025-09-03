@@ -1,0 +1,27 @@
+# Primavera3D Robots.txt
+# https://primavera3d.pro
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://primavera3d.pro/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

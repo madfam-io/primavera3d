@@ -16,20 +16,27 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Primavera3D - Advanced 3D Modeling & Digital Fabrication",
-  description: "Transform your ideas into reality with cutting-edge 3D modeling, parametric design, and digital fabrication services",
-  keywords: "3D modeling, parametric design, digital fabrication, CAD, CAM, 3D printing, CNC machining",
-  authors: [{ name: "Primavera3D" }],
+  metadataBase: new URL('https://primavera3d.pro'),
+  title: {
+    default: "Primavera3D | Advanced 3D Modeling & Digital Fabrication",
+    template: "%s | Primavera3D"
+  },
+  description: "Transform your ideas into reality with cutting-edge 3D modeling, parametric design, and digital fabrication services. Expert solutions in architecture, product design, and engineering.",
+  keywords: ["3D modeling", "parametric design", "digital fabrication", "CAD", "CAM", "3D printing", "CNC machining", "rapid prototyping", "architecture visualization", "product development"],
+  authors: [{ name: "Primavera3D Team" }],
+  creator: "Primavera3D",
+  publisher: "Primavera3D",
   openGraph: {
-    title: "Primavera3D",
-    description: "Advanced 3D Modeling & Digital Fabrication Services",
-    url: "https://primavera3d.com",
+    title: "Primavera3D | Advanced 3D Modeling & Digital Fabrication",
+    description: "Transform your ideas into reality with cutting-edge 3D modeling and digital fabrication services.",
+    url: "https://primavera3d.pro",
     siteName: "Primavera3D",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "Primavera3D - Advanced 3D Modeling & Digital Fabrication"
       },
     ],
     locale: "en_US",
@@ -37,14 +44,26 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Primavera3D",
-    description: "Advanced 3D Modeling & Digital Fabrication Services",
-    images: ["/og-image.png"],
+    title: "Primavera3D | Advanced 3D Modeling & Digital Fabrication",
+    description: "Transform your ideas into reality with cutting-edge 3D modeling and digital fabrication services.",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

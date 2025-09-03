@@ -1,0 +1,25 @@
+{
+  "name": "Primavera3D",
+  "short_name": "P3D",
+  "description": "Advanced 3D Modeling & Digital Fabrication Services",
+  "theme_color": "#1a1f3a",
+  "background_color": "#0f1419",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "design", "productivity"]
+}
