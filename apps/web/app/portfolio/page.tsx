@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Grid3X3, List } from 'lucide-react';
 import ProjectCard from '@/components/ProjectCard';
-import ProjectFilters from '@/components/ProjectFilters';
+// import ProjectFilters from '@/components/ProjectFilters'; // TODO: Implement filters
 
 const categories = ['All', 'Architecture', 'Product Design', 'Medical', 'Engineering', 'Art'];
 

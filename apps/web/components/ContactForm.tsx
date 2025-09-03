@@ -34,7 +34,7 @@ export default function ContactForm() {
           setErrors(response.errors);
         }
       }
-    } catch (error) {
+    } catch (_error) {
       setStatus('error');
       setMessage('An unexpected error occurred. Please try again.');
     } finally {

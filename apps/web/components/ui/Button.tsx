@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 
+  'onAnimationStart' | 'onAnimationEnd' | 'onAnimationIteration' | 'onDrag' | 'onDragStart' | 'onDragEnd'> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   icon?: LucideIcon;
@@ -23,7 +24,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     className = '',
     children, 
     disabled,
-    ...props 
+    ...restProps 
   }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg bp-transition-normal focus:outline-none focus:ring-2 focus:ring-blueprint-blue focus:ring-offset-2 focus:ring-offset-blueprint-dark disabled:opacity-50 disabled:cursor-not-allowed';
     
@@ -66,14 +67,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       );
     }
 
+    const motionProps = {
+      whileHover: { scale: 1.02 },
+      whileTap: { scale: 0.98 }
+    };
+
     return (
       <motion.button
         ref={ref}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        {...motionProps}
         disabled={disabled || loading}
         className={buttonClass}
-        {...props}
+        {...restProps}
       >
         {content}
       </motion.button>

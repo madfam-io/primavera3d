@@ -174,7 +174,7 @@ export default function AboutPage() {
           >
             <h2 className="bp-text-h2">Ready to Build Something Extraordinary?</h2>
             <p className="bp-text-body mb-8">
-              Let's collaborate to bring your most ambitious ideas to life through 
+              Let&apos;s collaborate to bring your most ambitious ideas to life through 
               the power of computational design and digital fabrication.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

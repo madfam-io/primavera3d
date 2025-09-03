@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Float, MeshDistortMaterial } from '@react-three/drei';
 import { useRef } from 'react';
 import { Mesh } from 'three';
-import * as THREE from 'three';
+// import * as THREE from 'three'; // Used for type references
 
 function HeroMesh() {
   const meshRef = useRef<Mesh>(null);

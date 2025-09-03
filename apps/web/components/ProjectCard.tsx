@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, User, Tag } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 
 interface Project {
   id: string;
