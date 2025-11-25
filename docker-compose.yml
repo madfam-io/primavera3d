@@ -1,0 +1,64 @@
+# =============================================================================
+# PRIMAVERA3D - Docker Compose Configuration
+# =============================================================================
+# Integrates with MADFAM shared infrastructure
+# Portfolio website for 3D modeling and digital fabrication services
+# =============================================================================
+
+name: primavera3d
+
+services:
+  # Production service
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    container_name: primavera3d-web
+    ports:
+      - '3020:3000'
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_ENV=production
+      # MADFAM ecosystem connections
+      - JANUA_API_URL=http://janua-api:8001
+      - JANUA_ENABLED=true
+      - JANUA_JWT_SECRET=dev-shared-janua-secret-32chars!!
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - madfam-shared-network
+    restart: unless-stopped
+
+  # Development service
+  web-dev:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile.dev
+    container_name: primavera3d-dev
+    ports:
+      - '3021:3000'
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_ENV=development
+      # MADFAM ecosystem connections
+      - JANUA_API_URL=http://janua-api:8001
+      - JANUA_ENABLED=true
+      - JANUA_JWT_SECRET=dev-shared-janua-secret-32chars!!
+    volumes:
+      - ./apps/web/src:/app/apps/web/src
+      - ./apps/web/public:/app/apps/web/public
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/web/node_modules
+      - /app/apps/web/.next
+    networks:
+      - madfam-shared-network
+    restart: unless-stopped
+
+networks:
+  madfam-shared-network:
+    external: true
