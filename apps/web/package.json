@@ -10,6 +10,10 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@cotiza/client": "^0.1.0",
+    "@janua/react-sdk": "^0.1.0",
+    "@madfam/analytics": "^0.1.0",
+    "@coforma/client": "^0.1.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
