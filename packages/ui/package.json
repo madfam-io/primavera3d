@@ -20,8 +20,8 @@
     "typescript": "5.9.2"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "@repo/utils": "*",
     "lucide-react": "^0.312.0"
   }
