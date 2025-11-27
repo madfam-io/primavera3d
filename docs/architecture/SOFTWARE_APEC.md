@@ -49,28 +49,28 @@ This specification defines the requirements for the standalone **Primavera3D** w
 
 ### Objectives
 
-* Establish Primavera3D as the premium choice for 3D design and digital fabrication in LATAM, U.S., and Europe.
-* Showcase portfolio via immersive visual experiences and credible case studies.
-* Generate **qualified** leads through interactive demonstrations and streamlined intake.
-* Position as the creative + technical arm of MADFAM; reflect solarpunk ethos.
-* Build authority in parametric design and digital manufacturing.
+- Establish Primavera3D as the premium choice for 3D design and digital fabrication in LATAM, U.S., and Europe.
+- Showcase portfolio via immersive visual experiences and credible case studies.
+- Generate **qualified** leads through interactive demonstrations and streamlined intake.
+- Position as the creative + technical arm of MADFAM; reflect solarpunk ethos.
+- Build authority in parametric design and digital manufacturing.
 
 ### Success Metrics (North‑Star KPIs)
 
-* **+200%** qualified project inquiries (lead quality threshold defined in CRM scoring).
-* **≥5:00** average session duration on portfolio/case studies.
-* **≥80%** portfolio engagement rate (viewer interactions / views).
-* **−50%** sales cycle time (first contact → proposal accepted).
-* **100+** technical resource downloads / month.
+- **+200%** qualified project inquiries (lead quality threshold defined in CRM scoring).
+- **≥5:00** average session duration on portfolio/case studies.
+- **≥80%** portfolio engagement rate (viewer interactions / views).
+- **−50%** sales cycle time (first contact → proposal accepted).
+- **100+** technical resource downloads / month.
 
-> **Measurement Notes:** KPIs instrumented via event taxonomy (see *Analytics*), with clear source attribution and MQL definition.
+> **Measurement Notes:** KPIs instrumented via event taxonomy (see _Analytics_), with clear source attribution and MQL definition.
 
 ### Key Differentiators
 
-* Interactive 3D model showcases (web, AR/VR) with **real‑time** material/variant switching.
-* Parametric design playground + live configurators for selected demos.
-* Sustainability impact calculators aligned to MADFAM’s solarpunk positioning.
-* Robust case studies with process transparency, specs, and measurable impact.
+- Interactive 3D model showcases (web, AR/VR) with **real‑time** material/variant switching.
+- Parametric design playground + live configurators for selected demos.
+- Sustainability impact calculators aligned to MADFAM’s solarpunk positioning.
+- Robust case studies with process transparency, specs, and measurable impact.
 
 ---
 
@@ -107,10 +107,10 @@ Design Language:
 
 ### Brand Voice
 
-* **Professional yet approachable** — clear, direct, warm.
-* **Innovative** — pushing boundaries responsibly.
-* **Sustainable** — environmentally conscious by design.
-* **Collaborative** — partnership‑first with transparent process.
+- **Professional yet approachable** — clear, direct, warm.
+- **Innovative** — pushing boundaries responsibly.
+- **Sustainable** — environmentally conscious by design.
+- **Collaborative** — partnership‑first with transparent process.
 
 ### Positioning Statement
 
@@ -144,7 +144,7 @@ Design Language:
 
 ### Secondary Segments
 
-* Educational institutions, government contractors, entertainment, medical/healthcare devices.
+- Educational institutions, government contractors, entertainment, medical/healthcare devices.
 
 ---
 
@@ -252,8 +252,8 @@ Workflow:
 
 ### Browser Support Baseline
 
-* Evergreen Chrome, Edge, Firefox; Safari 16+.
-* WebGL 2 preferred; graceful fallback to static media if unavailable.
+- Evergreen Chrome, Edge, Firefox; Safari 16+.
+- WebGL 2 preferred; graceful fallback to static media if unavailable.
 
 ---
 
@@ -284,9 +284,9 @@ Home
 
 ### Key User Flows
 
-* **Portfolio Discovery:** Landing → Portfolio Grid → Filter/Search → Project Details → 3D Viewer → Related → Contact
-* **Service Evaluation:** Services → Specific Service → Process → Portfolio Examples → Cost Calculator → Quote Request
-* **Project Initiation:** Project Configurator → Requirements → Timeline Estimate → Budget Range → Upload Files → Submit Inquiry
+- **Portfolio Discovery:** Landing → Portfolio Grid → Filter/Search → Project Details → 3D Viewer → Related → Contact
+- **Service Evaluation:** Services → Specific Service → Process → Portfolio Examples → Cost Calculator → Quote Request
+- **Project Initiation:** Project Configurator → Requirements → Timeline Estimate → Budget Range → Upload Files → Submit Inquiry
 
 ### Responsive & 3D Interaction
 
@@ -386,9 +386,9 @@ interface PortfolioProject {
 
 ### Features
 
-* **Advanced Filtering** (industry, service, year, budget, duration, technology; sort by recent/popular).
-* **Layouts**: Masonry grid, hover cards, detail list, optional map view.
-* **Confidentiality Controls**: blur/redact assets, logo‑masking, NDA gates.
+- **Advanced Filtering** (industry, service, year, budget, duration, technology; sort by recent/popular).
+- **Layouts**: Masonry grid, hover cards, detail list, optional map view.
+- **Confidentiality Controls**: blur/redact assets, logo‑masking, NDA gates.
 
 ---
 
@@ -398,12 +398,28 @@ interface PortfolioProject {
 
 ```typescript
 interface ModelViewer3D {
-  controls: { rotate: boolean; zoom: boolean; pan: boolean; autoRotate: boolean; resetView: () => void };
+  controls: {
+    rotate: boolean;
+    zoom: boolean;
+    pan: boolean;
+    autoRotate: boolean;
+    resetView: () => void;
+  };
   annotations: { hotspots: Hotspot[]; measurements: boolean; crossSection: boolean };
-  rendering: { quality: 'low'|'medium'|'high'|'ultra'; environment: EnvironmentMap; shadows: boolean; antialiasing: boolean };
+  rendering: {
+    quality: 'low' | 'medium' | 'high' | 'ultra';
+    environment: EnvironmentMap;
+    shadows: boolean;
+    antialiasing: boolean;
+  };
   materials: { switcher: MaterialOption[]; editor: MaterialProperties; presets: MaterialPreset[] };
-  export: { screenshot: () => void; download: (format: ModelFormat) => void; share: () => ShareableLink; embed: () => EmbedCode };
-  ar: { viewInAR: boolean; placement: 'floor'|'wall'|'table'; scale: ScaleControls };
+  export: {
+    screenshot: () => void;
+    download: (format: ModelFormat) => void;
+    share: () => ShareableLink;
+    embed: () => EmbedCode;
+  };
+  ar: { viewInAR: boolean; placement: 'floor' | 'wall' | 'table'; scale: ScaleControls };
 }
 ```
 
@@ -411,7 +427,12 @@ interface ModelViewer3D {
 
 ```typescript
 interface ParametricEditor {
-  parameters: { sliders: SliderParam[]; inputs: NumberInput[]; toggles: BooleanToggle[]; selectors: OptionSelect[] };
+  parameters: {
+    sliders: SliderParam[];
+    inputs: NumberInput[];
+    toggles: BooleanToggle[];
+    selectors: OptionSelect[];
+  };
   preview: { realTime: boolean; quality: RenderQuality; wireframe: boolean };
   generation: { variations: number; seed: number; export: () => ParametricDefinition };
   sharing: { saveConfiguration: () => ConfigURL; collaborate: () => CollabSession };
@@ -465,9 +486,26 @@ Deliverables: print‑ready files, toolpaths, material specs, assembly instructi
 
 ```typescript
 interface CostCalculator {
-  inputs: { projectType: string; complexity: number; timeline: DateRange; deliverables: string[]; revisions: number };
-  calc: { base: number; complexityMult: number; rushMult: number; revisionCost: number; total: number };
-  output: { estimate: PriceRange; breakdown: CostBreakdown; savings?: VolumeDiscount; payment: PaymentOptions };
+  inputs: {
+    projectType: string;
+    complexity: number;
+    timeline: DateRange;
+    deliverables: string[];
+    revisions: number;
+  };
+  calc: {
+    base: number;
+    complexityMult: number;
+    rushMult: number;
+    revisionCost: number;
+    total: number;
+  };
+  output: {
+    estimate: PriceRange;
+    breakdown: CostBreakdown;
+    savings?: VolumeDiscount;
+    payment: PaymentOptions;
+  };
   actions: { saveQuote(): Quote; scheduleCall(): CalendarLink; startProject(): ProjectForm };
 }
 ```
@@ -476,7 +514,12 @@ interface CostCalculator {
 
 ```typescript
 interface TimelineEstimator {
-  project: { scope: ProjectScope; phases: Phase[]; dependencies: Dependency[]; resources: Resource[] };
+  project: {
+    scope: ProjectScope;
+    phases: Phase[];
+    dependencies: Dependency[];
+    resources: Resource[];
+  };
   visualization: { gantt: GanttComponent; milestones: Milestone[]; criticalPath: Path };
   scenarios: { standard: Timeline; expedited: Timeline; phased: Timeline };
 }
@@ -487,7 +530,12 @@ interface TimelineEstimator {
 ```typescript
 interface MaterialSelector {
   categories: MaterialCategory[];
-  filters: { properties: PropertyFilter; sustainability: EcoFilter; cost: PriceRange; availability: Stock };
+  filters: {
+    properties: PropertyFilter;
+    sustainability: EcoFilter;
+    cost: PriceRange;
+    availability: Stock;
+  };
   comparison: { selected: Material[]; properties: ComparisonTable; recommendations: Material[] };
   calculator: { quantity: number; wastage: number; cost: number };
 }
@@ -500,17 +548,17 @@ interface MaterialSelector {
 ### Core Web Vitals Targets (2025)
 
 ```yaml
-LCP:  ≤ 2.5s (p75)
-INP:  ≤ 200ms (p75)  # replaces FID
-CLS:  ≤ 0.10 (p75)
-TTI:  ≤ 3.5s
-FCP:  ≤ 1.8s
+LCP: ≤ 2.5s (p75)
+INP: ≤ 200ms (p75) # replaces FID
+CLS: ≤ 0.10 (p75)
+TTI: ≤ 3.5s
+FCP: ≤ 1.8s
 
 3D Budgets:
-- Model load: < 3s for 10MB GLB on 4G (p75)
-- FPS: 60 desktop / 30 mobile
-- Interaction latency: < 50ms
-- Texture streaming: progressive, KTX2
+  - Model load: < 3s for 10MB GLB on 4G (p75)
+  - FPS: 60 desktop / 30 mobile
+  - Interaction latency: < 50ms
+  - Texture streaming: progressive, KTX2
 ```
 
 ### Optimization Strategies
@@ -574,37 +622,37 @@ Client Data:
 
 ### Privacy & Regulatory
 
-* GDPR (EU), CCPA/CPRA (U.S.), LGPD (BR), and Mexico data law alignment.
-* Consent Management Platform (CMP) for cookies/trackers; granular toggles.
-* DPA & SCCs with vendors; regional data residency options.
+- GDPR (EU), CCPA/CPRA (U.S.), LGPD (BR), and Mexico data law alignment.
+- Consent Management Platform (CMP) for cookies/trackers; granular toggles.
+- DPA & SCCs with vendors; regional data residency options.
 
 ---
 
 ## Accessibility
 
-* Conform to **WCAG 2.2 AA**.
-* Keyboard navigation for all interactive components and **3D viewer controls**; focus states visible.
-* Motion‑reduced versions (prefers‑reduced‑motion); configurable auto‑rotate.
-* Alt text, transcripts/captions, semantic HTML, ARIA where appropriate.
-* High‑contrast mode; color contrast ≥ 4.5:1 for text.
-* Form labels, error messaging, and field instructions programmatically associated.
+- Conform to **WCAG 2.2 AA**.
+- Keyboard navigation for all interactive components and **3D viewer controls**; focus states visible.
+- Motion‑reduced versions (prefers‑reduced‑motion); configurable auto‑rotate.
+- Alt text, transcripts/captions, semantic HTML, ARIA where appropriate.
+- High‑contrast mode; color contrast ≥ 4.5:1 for text.
+- Form labels, error messaging, and field instructions programmatically associated.
 
 ---
 
 ## SEO & Discoverability
 
-* Technical SEO: canonical URLs, XML sitemap, robots, clean URLs, hreflang.
-* Structured Data: Organization, Service, Project, Article, VideoObject, 3DModel (where applicable).
-* Performance budgets met; image alt; lazy but not for LCP element.
-* Link architecture: contextual cross‑links from services → case studies → tools.
+- Technical SEO: canonical URLs, XML sitemap, robots, clean URLs, hreflang.
+- Structured Data: Organization, Service, Project, Article, VideoObject, 3DModel (where applicable).
+- Performance budgets met; image alt; lazy but not for LCP element.
+- Link architecture: contextual cross‑links from services → case studies → tools.
 
 ---
 
 ## Internationalization & Localization
 
-* Initial locales: **en‑US**, **es‑MX** (copy parity), scalable to **pt‑BR**.
-* Use `next-intl` or equivalent; localized metadata, dates, numbers.
-* CMS supports per‑locale content and asset variants.
+- Initial locales: **en‑US**, **es‑MX** (copy parity), scalable to **pt‑BR**.
+- Use `next-intl` or equivalent; localized metadata, dates, numbers.
+- CMS supports per‑locale content and asset variants.
 
 ---
 
@@ -614,43 +662,54 @@ Client Data:
 
 ```typescript
 interface AnalyticsEvents {
-  portfolio: { view: string; interact3D: string; downloadRequest: string; timeSpent: number; device: string };
+  portfolio: {
+    view: string;
+    interact3D: string;
+    downloadRequest: string;
+    timeSpent: number;
+    device: string;
+  };
   threeD: { orbit: number; zoom: number; matSwap: string; arLaunch: boolean; export: string };
-  conversion: { startProject: boolean; quoteRequest: boolean; scheduleCall: boolean; source: string };
+  conversion: {
+    startProject: boolean;
+    quoteRequest: boolean;
+    scheduleCall: boolean;
+    source: string;
+  };
   content: { searchTerm: string; filterUsed: string; exitPage: string };
 }
 ```
 
 ### Experimentation
 
-* Vercel Edge Config / Experiments; Optimizely or VWO.
-* Test: portfolio layouts, 3D controls, CTA placement, pricing display, forms.
+- Vercel Edge Config / Experiments; Optimizely or VWO.
+- Test: portfolio layouts, 3D controls, CTA placement, pricing display, forms.
 
 ---
 
 ## Integrations & Data Flow
 
-* **CRM:** HubSpot or Pipedrive (lead capture, MQL scoring, sequences).
-* **Calendaring:** Cal.com or Calendly; round‑robin scheduling.
-* **Email:** SendGrid (transactional) + marketing provider.
-* **Payments:** Stripe (deposits, prototypes, training).
-* **Auth/SSO:** Optional MADFAM SSO for client portal (post‑launch).
+- **CRM:** HubSpot or Pipedrive (lead capture, MQL scoring, sequences).
+- **Calendaring:** Cal.com or Calendly; round‑robin scheduling.
+- **Email:** SendGrid (transactional) + marketing provider.
+- **Payments:** Stripe (deposits, prototypes, training).
+- **Auth/SSO:** Optional MADFAM SSO for client portal (post‑launch).
 
 ---
 
 ## Quality Assurance & Testing
 
-* **Automated:** unit (Vitest), component (Storybook tests), E2E (Playwright).
-* **Manual:** cross‑browser/device matrix; 3D performance checks; accessibility audit.
-* **Acceptance Criteria:** each feature meets perf, a11y, analytics, and SEO gates.
+- **Automated:** unit (Vitest), component (Storybook tests), E2E (Playwright).
+- **Manual:** cross‑browser/device matrix; 3D performance checks; accessibility audit.
+- **Acceptance Criteria:** each feature meets perf, a11y, analytics, and SEO gates.
 
 ---
 
 ## Governance & Workflow
 
-* **RACI:** Product (R), Design (A), Eng (R), QA (C), Marketing/Sales (C), Leadership (I).
-* **Content Ops:** draft → review → legal/brand check → publish; versioned in CMS.
-* **Definition of Done:** specs met; tests passing; Lighthouse ≥ 90; a11y AA; events firing; documentation updated.
+- **RACI:** Product (R), Design (A), Eng (R), QA (C), Marketing/Sales (C), Leadership (I).
+- **Content Ops:** draft → review → legal/brand check → publish; versioned in CMS.
+- **Definition of Done:** specs met; tests passing; Lighthouse ≥ 90; a11y AA; events firing; documentation updated.
 
 ---
 
@@ -658,48 +717,48 @@ interface AnalyticsEvents {
 
 ### Phase 1 — Foundation (Weeks 1–4)
 
-* Design system & tokens; base layout & navigation
-* Component library (shadcn/radix); basic routes
-* Portfolio schema & Sanity CMS integration
-* CI/CD, environments, observability
+- Design system & tokens; base layout & navigation
+- Component library (shadcn/radix); basic routes
+- Portfolio schema & Sanity CMS integration
+- CI/CD, environments, observability
 
 **Gate:** deployable shell; Lighthouse ≥ 90 (no 3D yet)
 
 ### Phase 2 — Portfolio System (Weeks 5–8)
 
-* Grid layouts, search & advanced filters
-* Project detail pages; confidentiality controls
-* Media management & CDN pipelines
+- Grid layouts, search & advanced filters
+- Project detail pages; confidentiality controls
+- Media management & CDN pipelines
 
 **Gate:** 10+ projects live; analytics events wired
 
 ### Phase 3 — 3D Integration (Weeks 9–12)
 
-* Model viewer (GLB/GLTF) with controls & annotations
-* AR Quick Look/Scene Viewer; performance optimization
-* Progressive loading & device adaptivity
+- Model viewer (GLB/GLTF) with controls & annotations
+- AR Quick Look/Scene Viewer; performance optimization
+- Progressive loading & device adaptivity
 
 **Gate:** 60fps desktop scenes; fallback works
 
 ### Phase 4 — Interactive Tools (Weeks 13–16)
 
-* Cost calculator, timeline estimator, material selector
-* Project configurator & forms (spam protection)
+- Cost calculator, timeline estimator, material selector
+- Project configurator & forms (spam protection)
 
 **Gate:** conversion flow tracked end‑to‑end
 
 ### Phase 5 — Content & Polish (Weeks 17–20)
 
-* Portfolio migration, case studies, SEO
-* Perf hardening, a11y audit, legal/privacy
-* Launch checklist & playbook
+- Portfolio migration, case studies, SEO
+- Perf hardening, a11y audit, legal/privacy
+- Launch checklist & playbook
 
 **Gate:** Go‑Live
 
 ### Phase 6 — Advanced (Post‑Launch)
 
-* Parametric playground, VR scenes, AI design assistant
-* Client portal (SSO), advanced analytics & dashboards
+- Parametric playground, VR scenes, AI design assistant
+- Client portal (SSO), advanced analytics & dashboards
 
 ---
 
@@ -707,22 +766,22 @@ interface AnalyticsEvents {
 
 ### Launch Requirements
 
-* ≥ 20 portfolio projects; all services documented
-* 3D viewer functional across supported devices
-* Median page load < 3s; Lighthouse ≥ 90 across pages
-* A11y: WCAG 2.2 AA; privacy & cookie consent live
+- ≥ 20 portfolio projects; all services documented
+- 3D viewer functional across supported devices
+- Median page load < 3s; Lighthouse ≥ 90 across pages
+- A11y: WCAG 2.2 AA; privacy & cookie consent live
 
 ### 6‑Month Business Targets
 
-* +200% qualified leads; +50% conversion
-* 500+ resource downloads; NPS ≥ 85
-* ≥ 5 enterprise clients initiated
+- +200% qualified leads; +50% conversion
+- 500+ resource downloads; NPS ≥ 85
+- ≥ 5 enterprise clients initiated
 
 ### Technical SLOs
 
-* 60fps 3D interactions (desktop), 30fps (mobile)
-* 99.9% uptime (monthly), RTO ≤ 4h, RPO ≤ 1h
-* Zero critical security incidents; INP ≤ 200ms (p75)
+- 60fps 3D interactions (desktop), 30fps (mobile)
+- 99.9% uptime (monthly), RTO ≤ 4h, RPO ≤ 1h
+- Zero critical security incidents; INP ≤ 200ms (p75)
 
 ---
 
@@ -743,9 +802,9 @@ Asset Size: large GLBs
 
 ```yaml
 Portfolio Confidentiality
-  → NDA gating; anonymized cases; logo masking
+→ NDA gating; anonymized cases; logo masking
 Competitive Differentiation
-  → Focus on real‑time/parametric demos; measurable outcomes; solarpunk framing
+→ Focus on real‑time/parametric demos; measurable outcomes; solarpunk framing
 ```
 
 ---
@@ -754,23 +813,23 @@ Competitive Differentiation
 
 ### A. Competitor Landscape (reference)
 
-* Autodesk Gallery, Behance 3D, ArtStation, Shapeways, Formlabs
+- Autodesk Gallery, Behance 3D, ArtStation, Shapeways, Formlabs
 
 ### B. Technology Partners
 
-* Three.js, Vercel, Cloudinary/Mux, Sanity, Stripe
+- Three.js, Vercel, Cloudinary/Mux, Sanity, Stripe
 
 ### C. Industry Standards
 
-* STEP/IGES, STL (printing), glTF 2.0 (web), USD/USDZ (interchange/AR), WebXR
+- STEP/IGES, STL (printing), glTF 2.0 (web), USD/USDZ (interchange/AR), WebXR
 
 ### D. Recommended Reading
 
-* Three.js docs; MDN WebGL best practices; React Three Fiber docs; web.dev performance; W3C WCAG 2.2
+- Three.js docs; MDN WebGL best practices; React Three Fiber docs; web.dev performance; W3C WCAG 2.2
 
 ### E. Contacts (TBD)
 
-* Technical Lead, Design Lead, Product Owner, Project Manager
+- Technical Lead, Design Lead, Product Owner, Project Manager
 
 ---
 
