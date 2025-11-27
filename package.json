@@ -2,6 +2,7 @@
   "name": "primavera3d",
   "private": true,
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "description": "High-performance portfolio website for 3D modeling and digital fabrication services",
   "scripts": {
     "build": "turbo run build",
@@ -31,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
     "@vitejs/plugin-react": "^4.2.0",
+    "@vitest/coverage-v8": "1.2.0",
     "@vitest/ui": "^1.2.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
