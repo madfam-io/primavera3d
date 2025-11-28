@@ -18,6 +18,6 @@
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "eslint": "^9.34.0",
-    "typescript": "5.9.2"
+    "typescript": "^5.9.3"
   }
 }

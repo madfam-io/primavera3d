@@ -42,7 +42,7 @@
     "lint-staged": "^15.2.0",
     "prettier": "^3.6.2",
     "turbo": "2.6.1",
-    "typescript": "5.9.2",
+    "typescript": "^5.9.3",
     "vitest": "^1.2.0"
   },
   "engines": {
