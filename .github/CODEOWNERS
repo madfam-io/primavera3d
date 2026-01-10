@@ -4,38 +4,38 @@
 # that modifies code that they own.
 
 # Default owners for everything in the repo
-* @madfam-io/developers
+* @madfam-org/developers
 
 # GitHub configuration and workflows
-/.github/ @madfam-io/devops @madfam-io/developers
+/.github/ @madfam-org/devops @madfam-org/developers
 
 # Root configuration files
-/*.config.* @madfam-io/developers
-/*.json @madfam-io/developers
+/*.config.* @madfam-org/developers
+/*.json @madfam-org/developers
 
 # Documentation
-/docs/ @madfam-io/developers
-README.md @madfam-io/developers
+/docs/ @madfam-org/developers
+README.md @madfam-org/developers
 
 # Apps
-/apps/web/ @madfam-io/web-team @madfam-io/design-team
+/apps/web/ @madfam-org/web-team @madfam-org/design-team
 
 # 3D/Portfolio content
-/public/models/ @madfam-io/design-team
-/public/images/ @madfam-io/design-team
+/public/models/ @madfam-org/design-team
+/public/images/ @madfam-org/design-team
 
 # Security-sensitive
-**/.env.* @madfam-io/security-team @madfam-io/devops
+**/.env.* @madfam-org/security-team @madfam-org/devops
 
 # Infrastructure
-docker-compose*.yml @madfam-io/devops
-**/*deploy*.yml @madfam-io/devops
+docker-compose*.yml @madfam-org/devops
+**/*deploy*.yml @madfam-org/devops
 
 # Testing
-**/*.test.* @madfam-io/qa-team @madfam-io/developers
-playwright.config.ts @madfam-io/qa-team
-vitest.config.* @madfam-io/qa-team
+**/*.test.* @madfam-org/qa-team @madfam-org/developers
+playwright.config.ts @madfam-org/qa-team
+vitest.config.* @madfam-org/qa-team
 
 # Dependencies
-package.json @madfam-io/security-team @madfam-io/developers
-pnpm-lock.yaml @madfam-io/security-team @madfam-io/developers
+package.json @madfam-org/security-team @madfam-org/developers
+pnpm-lock.yaml @madfam-org/security-team @madfam-org/developers
